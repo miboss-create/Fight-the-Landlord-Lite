@@ -141,7 +141,7 @@ function findPlane(
   return null;
 }
 
-function findBomb(hand: Card[], minValue = 2): Card[] | null {
+export function findBomb(hand: Card[], minValue = 2): Card[] | null {
   const groups = groupHand(hand);
   for (const g of groups) {
     if (g.value > minValue && g.cards.length === 4) {
@@ -151,7 +151,7 @@ function findBomb(hand: Card[], minValue = 2): Card[] | null {
   return null;
 }
 
-function findRocket(hand: Card[]): Card[] | null {
+export function findRocket(hand: Card[]): Card[] | null {
   const small = hand.find((c) => c.value === 16);
   const big = hand.find((c) => c.value === 17);
   if (small && big) return [small, big];
