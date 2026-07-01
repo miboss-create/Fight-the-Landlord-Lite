@@ -9,16 +9,31 @@ interface AIHandProps {
   isActive: boolean;
 }
 
+const avatarMap: Record<string, string> = {
+  '农民甲': '/assets/avatars/farmer-male.svg',
+  '农民乙': '/assets/avatars/farmer-female.svg',
+  '我': '/assets/avatars/landlord.svg',
+};
+
 export function AIHand({ name, count, position, isLandlord, isActive }: AIHandProps) {
   const cardsToShow = Math.min(count, 12);
   const isLeft = position === 'left';
 
   return (
     <div
-      className={`flex flex-col items-center gap-1 ${isLeft ? 'items-start' : 'items-end'}`}
+      className={`flex flex-col items-center gap-2 ${isLeft ? 'items-start' : 'items-end'}`}
     >
+      <div className="relative">
+        <img
+          src={avatarMap[name] || '/assets/avatars/farmer-male.svg'}
+          alt={name}
+          className={`w-12 h-12 sm:w-14 sm:h-14 avatar ${isLandlord ? 'avatar-landlord' : ''} ${isActive ? 'avatar-active' : ''}`}
+        />
+        {isLandlord && (
+          <Crown className="absolute -top-1 -right-1 w-4 h-4 text-[#d4a653] bg-[#0a1f18] rounded-full p-0.5" />
+        )}
+      </div>
       <div className="flex items-center gap-1.5 text-[#f7f3e8]">
-        {isLandlord && <Crown className="w-4 h-4 text-[#d4a653]" />}
         <span className={`text-sm font-medium ${isActive ? 'text-[#d4a653]' : ''}`}>
           {name}
         </span>

@@ -20,6 +20,8 @@ interface GameStore extends GameState {
   aiPlay: () => void;
   hint: () => void;
   resetGame: () => void;
+  effect: { type: 'BOMB' | 'ROCKET' | 'PLANE' | null; key: number };
+  clearEffect: () => void;
 }
 
 function makeInitialState(): GameState {
@@ -37,6 +39,7 @@ function makeInitialState(): GameState {
     selectedCardIds: [],
     winner: null,
     logs: [],
+    effect: { type: null, key: 0 },
   };
 }
 
@@ -234,11 +237,20 @@ export const useGameStore = create<GameStore>((set, get) => ({
       `${player.name} 出了 ${patternDisplay(pattern)}`,
     ];
 
+    const effectType =
+      pattern.type === 'BOMB' || pattern.type === 'ROCKET' || pattern.type === 'PLANE'
+        ? pattern.type
+        : null;
+    const effect = effectType
+      ? { type: effectType, key: state.effect.key + 1 }
+      : state.effect;
+
     set({
       players,
       lastPlay,
       selectedCardIds: playerId === 'player' ? [] : state.selectedCardIds,
       logs,
+      effect,
     });
 
     if (player.hand.length === 0) {
@@ -327,6 +339,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 
   resetGame: () => set(makeInitialState()),
+
+  clearEffect: () => set((state) => ({ effect: { ...state.effect, type: null } })),
 }));
 
 function patternDisplay(pattern: Pattern): string {

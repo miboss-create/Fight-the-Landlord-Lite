@@ -5,6 +5,7 @@ import { Controls } from './Controls';
 import { PlayArea } from './PlayArea';
 import { PlayerHand } from './PlayerHand';
 import { SettlementModal } from './SettlementModal';
+import { EffectOverlay } from './EffectOverlay';
 import { getPattern, patternBeats } from '@/engine/patterns';
 import { getPlayerById } from '@/engine/rules';
 import { Crown, RotateCcw } from 'lucide-react';
@@ -21,6 +22,7 @@ export function GameScreen() {
     selectedCardIds,
     winner,
     logs,
+    effect,
     startGame,
     bid,
     playSelected,
@@ -66,7 +68,7 @@ export function GameScreen() {
       </header>
 
       {/* AI hands + table */}
-      <div className="flex-1 flex flex-col px-2 sm:px-6 py-4 gap-4 overflow-hidden">
+      <div className={`flex-1 flex flex-col px-2 sm:px-6 py-4 gap-4 overflow-hidden ${effect.type === 'BOMB' ? 'animate-table-shake' : ''}`}>
         <div className="flex justify-between items-start">
           <AIHand
             name={ai1.name}
@@ -84,8 +86,9 @@ export function GameScreen() {
           />
         </div>
 
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center relative">
           <PlayArea lastPlay={lastPlay} currentTurn={currentTurn} landlordId={landlordId} />
+          {effect.type && <EffectOverlay type={effect.type} effectKey={effect.key} />}
         </div>
 
         {/* Logs */}
@@ -100,6 +103,11 @@ export function GameScreen() {
         {/* Player area */}
         <div className="flex flex-col items-center gap-3 pb-4">
           <div className="flex items-center gap-2 text-sm">
+            <img
+              src="/assets/avatars/landlord.svg"
+              alt="玩家"
+              className={`w-10 h-10 sm:w-12 sm:h-12 avatar ${landlordId === 'player' ? 'avatar-landlord' : ''} ${currentTurn === 'player' ? 'avatar-active' : ''}`}
+            />
             <span className={currentTurn === 'player' ? 'text-[#d4a653] font-medium' : 'text-[#f7f3e8]/70'}>
               {currentTurn === 'player' ? '→ 你的回合' : '等待中'}
             </span>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-male" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e3328"/>
+      <stop offset="100%" stop-color="#0a1510"/>
+    </radialGradient>
+    <linearGradient id="skin-male" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eac0a0"/>
+      <stop offset="100%" stop-color="#d4a080"/>
+    </linearGradient>
+    <linearGradient id="hat-male" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c49a6c"/>
+      <stop offset="100%" stop-color="#8b6b45"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#bg-male)"/>
+  <ellipse cx="100" cy="60" rx="55" ry="25" fill="url(#hat-male)"/>
+  <ellipse cx="100" cy="75" rx="40" ry="12" fill="#6b4e30"/>
+  <circle cx="100" cy="110" r="55" fill="url(#skin-male)"/>
+  <ellipse cx="100" cy="165" rx="55" ry="30" fill="#4a6b5a"/>
+  <path d="M55 140 Q100 160 145 140 L145 175 Q100 190 55 175 Z" fill="#3d5a4c"/>
+  <ellipse cx="85" cy="112" rx="5" ry="7" fill="#2a2018"/>
+  <ellipse cx="115" cy="112" rx="5" ry="7" fill="#2a2018"/>
+  <path d="M75 100 Q85 95 95 100" stroke="#5a4030" stroke-width="2.5" fill="none"/>
+  <path d="M105 100 Q115 95 125 100" stroke="#5a4030" stroke-width="2.5" fill="none"/>
+  <path d="M96 122 Q100 120 104 122" stroke="#a07050" stroke-width="2" fill="none"/>
+  <path d="M94 135 Q100 140 106 135" stroke="#b08060" stroke-width="2.5" fill="none"/>
+  <path d="M70 128 Q65 145 68 160" stroke="#8b6045" stroke-width="2" fill="none"/>
+  <path d="M130 128 Q135 145 132 160" stroke="#8b6045" stroke-width="2" fill="none"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#d4a653" stroke-width="3"/>
+</svg>

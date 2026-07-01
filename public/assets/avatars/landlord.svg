@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <radialGradient id="bg-landlord" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2d1b14"/>
+      <stop offset="100%" stop-color="#0f0a08"/>
+    </radialGradient>
+    <linearGradient id="skin-landlord" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5d0b5"/>
+      <stop offset="100%" stop-color="#e0b090"/>
+    </linearGradient>
+    <linearGradient id="robe-landlord" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b2635"/>
+      <stop offset="100%" stop-color="#4a1018"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#bg-landlord)"/>
+  <circle cx="100" cy="100" r="90" fill="url(#skin-landlord)"/>
+  <ellipse cx="100" cy="175" rx="70" ry="35" fill="url(#robe-landlord)"/>
+  <path d="M55 130 Q100 155 145 130 L145 170 Q100 190 55 170 Z" fill="#6b1a25"/>
+  <path d="M85 65 Q100 55 115 65 L120 85 Q100 95 80 85 Z" fill="#1a1a1a"/>
+  <path d="M70 95 Q85 90 95 100" stroke="#5a3a2a" stroke-width="3" fill="none"/>
+  <path d="M130 95 Q115 90 105 100" stroke="#5a3a2a" stroke-width="3" fill="none"/>
+  <path d="M95 110 Q100 108 105 110" stroke="#8b5a3a" stroke-width="2" fill="none"/>
+  <path d="M92 125 Q100 132 108 125" stroke="#a06040" stroke-width="3" fill="none"/>
+  <ellipse cx="85" cy="105" rx="5" ry="7" fill="#2a1a10"/>
+  <ellipse cx="115" cy="105" rx="5" ry="7" fill="#2a1a10"/>
+  <path d="M78 80 Q85 75 92 80" stroke="#2a1a10" stroke-width="2" fill="none"/>
+  <path d="M108 80 Q115 75 122 80" stroke="#2a1a10" stroke-width="2" fill="none"/>
+  <path d="M95 60 Q100 50 105 60" fill="#2a1a10"/>
+  <path d="M60 120 Q50 140 55 160" stroke="#5a3a2a" stroke-width="2" fill="none"/>
+  <path d="M140 120 Q150 140 145 160" stroke="#5a3a2a" stroke-width="2" fill="none"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#d4a653" stroke-width="4"/>
+</svg>

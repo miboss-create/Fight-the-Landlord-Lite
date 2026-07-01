@@ -65,4 +65,5 @@ export interface GameState {
   selectedCardIds: string[];
   winner: PlayerId | null;
   logs: string[];
+  effect: { type: 'BOMB' | 'ROCKET' | 'PLANE' | null; key: number };
 }
